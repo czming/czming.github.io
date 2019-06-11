@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="preload" href="resources/screen-loading.gif" as="image">
+		<!--set up connects with the external sources first, crossorigin only for img,js and video-->
+		<link rel="preconnect" href="https://ajax.googleapis.com/" crossorigin>
+		<link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
+		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+		<link rel="preload" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Ubuntu&display=swap" as="style" onload="this.rel='stylesheet'">
+		<script>window.lazyLoadOptions = {elements_selector: ".lazyload"};</script>
+		<style>::-webkit-scrollbar{width:6px;} ::-webkit-scrollbar-track{box-shadow: inset 0 0 5px #111111;border-radius:5px;} ::-webkit-scrollbar-thumb{background:#444444;border-radius:5px;} ::-webkit-scrollbar-thumb:hover{background: #777777;}</style>
+		<script type="text/javascript" src="scripts/jquery-3.4.1.min.js" defer></script>
+		<script type="text/javascript" src="scripts/default.min.js" defer></script>
+		<meta name="description" content="Hi, I'm Zhe Ming, an aspiring software developer that likes to build, create and develop."/>
+		<meta name="author" content="Chng Zhe Ming">
+		<title> Zhe Ming. </title>
+		<!--lazyload plugin from Github by Andrea Verlicchi under MIT License-->
+		<script type="text/javascript" src="scripts/lazyload.min.js" defer></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="resources/favicon2.ico">
+		<link rel="preload" href="resources/placeholder.png" as="image">
+	</head>
+
+	<body>
+		<!-- loading screen, inline style for faster loading --> 
+		<div id="loading-screen" style="background-color:#050505;width:100vw;height:100vh;top:0;left:0;position:fixed;z-index:10;">
+			<img src="resources/screen-loading.gif" style="width:45px;position:fixed;top:50%;margin-top:-22.5px;left:50%;margin-left:-22.5px;"/>
+		</div>
+		
+		<div class="intro-div">
+			<div class="intro-text">
+				<!-- prevents the cursor from moving up and centers text because cursor on right-->
+				<h1 style="display:inline-block;">&#x202F;</h1>
+				<!--this fades in later, after the user sees Hi-->
+				<h1 id="index-intro" style="display:inline-block;"></h1>
+			</div>
+			<!-- intro video background (laptop typing) -->
+			<video autoplay muted loop id="laptop-video">
+				<source src="resources/Programming.mp4" type="video/mp4">
+			</video>
+		</div>
+		
+		<!-- scroll up button -->
+		<div id="scroll-up-button" class="rotate-ninety" scroll-time="1500" location="html"><p>&#171;</p></div>
+
+		<div class="nav-bar">
+		<!-- nav-bar-mobile for the buttons to be seen on mobile (only 3 buttons), nav-bar-button can be used for the desktop ones-->
+			<p location="html" class="nav-bar-button nav-bar-mobile" scroll-time="1000"> Home </p>
+			<p location="#about" class="nav-bar-button nav-bar-mobile" scroll-time="1000"> About </p>
+			<p location="#activities" class="nav-bar-button nav-bar-mobile" scroll-time="1500"> Activities </p>
+		</div>
+		
+		<div class="nav-bar-slide">
+			<p location="html" class="nav-bar-button nav-bar-mobile" scroll-time="1000"> Home </p>
+			<p location="#about" class="nav-bar-button nav-bar-mobile" scroll-time="1000"> About </p>
+			<p location="#activities" class="nav-bar-button nav-bar-mobile" scroll-time="1000"> Activities </p>
+		</div>
+		
+		<!-- to block off intro section --> 
+		<div class="intro-block">
+		</div>
+		
+		<div class="guide-down-div">
+			<p class="guide-down-arrow rotate-ninety">&#187;</p>
+		</div>
+		<div class="content">	
+			<div class="content-block" id="about">
+				<h1 class="content-header fade-in"> Who am I?</h1>
+				<div class="about-content">
+					<div class="fade-in fade-up about-image">
+						<img src="resources/profile-photo.webp" onerror="this.onerror=null; this.src='resources/profile-photo.jpg'" draggable="false" style="width:150px; border:4px solid white;border-radius:80px;" alt="Zhe Ming profile photo" />
+						<p style="font-size:0.5em;text-align:center;margin:0;"> (Yes I'm a little shy)</p>
+					</div>
+					<div class="fade-in fade-up about-text">
+						<p>I am an aspiring software developer. </p>
+						<p>I fell in love with programming after being introduced to Ruby 4 years ago through a 
+						one-month boot camp and have been programming ever since. I continued to take up H2 Computing at the Junior College level where I learnt Python and 
+						explored my passion for programming through hackathons and organising a computer science conference for ~100 secondary school students together with
+						computing students from other schools.</p>
+						<p> I have the most experience with Python as it was the language used for my school's H2 Computing syllabus. I also use HTML and Javascript with Google App Engine's 
+						Python Standard Environment to develop webapps for hackathons, but I am always open to learning new languages, recently picking up VBA Macro and Octave.</p>
+					</div>
+				</div>
+			</div>
+			<div class="content-block content-even" id="skills">
+				<h1 class="content-header fade-in"> Skills </h1>
+				<div class="skills-div fade-in fade-up">
+					<div class="logo-div">
+						<p class="languages-logo"> Python</p>
+						<p class="languages-logo"> HTML/CSS</p>
+						<p class="languages-logo"> Javascript</p>
+						<p class="languages-logo"> Ruby</p>
+						<p class="languages-logo"> VBA&nbsp;Macro</p>
+						<p class="languages-logo"> Java</p>
+						<p class="languages-logo"> Octave</p>
+					</div>
+					<div class="bar-div">
+						<div class="expanding-bar" value="2.5">
+							<p class="expanding-bar-text"> 3 years </p>
+						</div>
+						<div class="expanding-bar" value="2">
+							<p class="expanding-bar-text"> 2 years </p>
+						</div>
+						<div class="expanding-bar" value="2">
+							<p class="expanding-bar-text"> 2 years </p>
+						</div>
+						<!-- not scaling linearly -->
+						<div class="expanding-bar" value="0.75">
+							<p class="expanding-bar-text"> 0.5 year </p>
+						</div>
+						<div class="expanding-bar" value="0.75">
+							<p class="expanding-bar-text"> 0.5 year </p>
+						</div>
+						<div class="expanding-bar" value="0.5">
+							<p class="expanding-bar-text"> New! </p>
+						</div>
+						<div class="expanding-bar" value="0.5">
+							<p class="expanding-bar-text"> New! </p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="content-block" id="education">
+				<h1 class="content-header fade-in"> Education</h1> 	
+				<div class="school-title fade-in fade-up">
+					<p style="font-weight:900;text-decoration:underline;"> Dunman High School <span style="font-style:italic"> (Singapore-Cambridge GCE "A" Level Examinations)</span></p>
+					<p style="font-style:italic;"> 2012-2017 </p>
+				</div>
+				<p class="fade-in fade-up" style="font-weight:bold;">Subjects taken:</p>
+				<ul class="award-list mobile-only">
+					<li class="fade-up fade-in"> <h4>H3 Semiconductor Physics and Devices (NTU): Distinction </h4></li>
+					<li class="fade-up fade-in"> <h4>H2 Physics: A </h4></li>
+					<li class="fade-up fade-in"> <h4>H2 Computing: A </h4></li>
+					<li class="fade-up fade-in"> <h4>H2 Mathematics: A </h4></li>
+					<li class="fade-up fade-in"> <h4>H2 Economics: A </h4></li>
+					<li class="fade-up fade-in"> <h4>H1 Project Work: A </h4></li>
+					<li class="fade-up fade-in"> <h4>H1 General Paper: A </h4></li>
+					<li class="fade-up fade-in"> <h4>O Level Higher Chinese: A2 </h4></li>
+				</ul>
+				
+				
+				<div style="text-align:center;" class="fade-in fade-up desktop-only">
+					<div class="box-placeholder"> 
+						<div class="education-subject-box" style="background-color:#111111;">
+							<div class="education-subject front"> H3 Semiconductor Physics and Devices</div> 
+							<div class="education-subject back hidden"> Grade: Distinction</div>
+						</div>
+					</div>
+					<div class="box-placeholder"> 
+						<div class="education-subject-box" style="background-color:#222222;">
+							<div class="education-subject front"> H2 Physics</div> 
+							<div class="education-subject back hidden"> Grade: A</div>
+						</div>
+					</div>
+					<div class="box-placeholder"> 
+						<div class="education-subject-box" style="background-color:#333333;">
+							<div class="education-subject front"> H2 Computing</div> 
+							<div class="education-subject back hidden"> Grade: A</div>
+						</div>
+					</div>
+					<div class="box-placeholder"> 
+						<div class="education-subject-box" style="background-color:#444444;">
+							<div class="education-subject front"> H2 Mathematics</div> 
+							<div class="education-subject back hidden"> Grade: A</div>
+						</div>
+					</div>
+					<div class="box-placeholder"> 
+						<div class="education-subject-box" style="background-color:#555555;">
+							<div class="education-subject front"> H2 Economics</div>
+							<div class="education-subject back hidden"> Grade: A</div>
+						</div>
+					</div>
+					<div class="box-placeholder"> 
+						<div class="education-subject-box" style="background-color:#666666;">
+							<div class="education-subject front"> H1 Project Work</div> 
+							<div class="education-subject back hidden"> Grade: A</div>
+						</div>
+					</div>
+					<div class="box-placeholder"> 
+						<div class="education-subject-box" style="background-color:#777777;">
+							<div class="education-subject front"> H1 General Paper</div> 
+							<div class="education-subject back hidden"> Grade: A</div>
+						</div>
+					</div>
+					<div class="box-placeholder"> 
+						<div class="education-subject-box" style="background-color:#888888;">
+							<div class="education-subject front"> O-Level Higher Chinese</div> 
+							<div class="education-subject back hidden"> Grade: A2</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<p class="fade-up fade-in"><span style="font-weight:bold;"> Co-curricular Activities:</span> Robotics (2012-2017), Tennis (2016-2017) and Infocomm (2016-2017) </p>
+				<div style="text-align:center;" class="fade-in fade-up">
+					<div class="box-placeholder"> 
+						<div class="education-subject-box" style="background-color:#8f0808;">
+							<div class="education-subject front"> Robotics <br>(Senior High)</div> 
+							<div class="education-subject back hidden" style="font-size:0.7em;"> Executive Committee, Head of Singapore Amazing Flying Machine Competition</div>
+						</div>
+					</div>
+					<div class="box-placeholder"> 
+						<div class="education-subject-box" style="background-color:#00ab30;">
+							<div class="education-subject front"> Robotics <br>(Junior High)</div> 
+							<div class="education-subject back hidden"> Executive Committee, Head of Logistics</div>
+						</div>
+					</div>
+					<div class="box-placeholder"> 
+						<div class="education-subject-box" style="background-color:#019e9a;">
+							<div class="education-subject front"> Tennis </div> 
+							<div class="education-subject back hidden"> Executive Committee, Quartermaster</div>
+						</div>
+					</div>
+					<div class="box-placeholder"> 
+						<div class="education-subject-box" style="background-color:#050268;">
+							<div class="education-subject front"> Infocomm </div> 
+							<div class="education-subject back hidden"> Member</div>
+						</div>
+					</div>
+				</div>
+				
+				
+			</div>
+			
+			<div class="content-block content-even" id="activities"  style="padding-left:0;padding-right:0;">
+				<h1 class="content-header fade-in"> Projects</h1>
+				<p class="fade-in fade-up" style="padding: 0 30px; font-size:0.9em;"> I love working on projects as they give me a chance to apply the stuff that I've learnt. Here are some of my favourite from different stages of my learning journey: </p>
+				<div class="projects-div">
+					<div class="project fade-in fade-up">
+						<img data-src="resources/cashit-screenshot.webp" src="resources/placeholder.png" onerror="this.onerror=null; this.src='resources/cashit-screenshot.jpg'" draggable="false" class="projects-photo lazyload" alt="CashIt web app screenshot by Zhe Ming"/>
+						<div class="project-description">
+							<h3 class="project-title"> CashIt </h3>
+							<p class="project-description-desktop"> A mobile payment solution for the unbanked. <br><br>Developed for Code:XtremeApps:: 2016 24-hour hackathon, just 6 months after joining computing. </p>
+							<a href="https://cashitsg.appspot.com" class="project-link project-description-desktop" draggable="false" target="_blank" rel="noopener"> View webapp </a>
+							<p class="project-description-mobile modal-button" value="#cashit-modal-box"> Learn more >> </p>
+						</div>
+						<div class="project-background"></div>
+					</div>
+					<div class="project fade-in fade-up">
+						<img data-src="resources/savinup-screenshot.webp" src="resources/placeholder.png" onerror="this.onerror=null; this.src='resources/savinup-screenshot.jpg'" draggable="false" class="projects-photo lazyload" alt="SavinUp web app screenshot by Zhe Ming">
+						<div class="project-description">
+							<h3 class="project-title"> SavinUp </h3>
+							<p class="project-description-desktop"> Your personal financial chatbot. <br><br>Developed for BiZiT Festival 2017 Standard Chartered Fintech Track</p>
+							<a href="https://github.com/czming/SavinUp" class="project-link project-description-desktop" draggable="false" target="_blank" rel="noopener"> View code </a>
+							<p class="project-description-mobile modal-button" value="#savinup-modal-box"> Learn more >> </p>
+						</div>
+						<div class="project-background"></div>
+					</div>
+					<div class="project fade-in fade-up">
+						<img data-src="resources/sggowhere-screenshot.jpg" src="resources/placeholder.png" draggable="false" class="projects-photo lazyload" alt="GoWhere@SG screenshot by Zhe Ming"/>
+						<div class="project-description">
+							<h3 class="project-title"> GoWhere@SG </h3>
+							<p class="project-description-desktop"> Ever ran out of things to do? GoWhere@SG will suggest activities for you, from user-submitted events to landmarks in Singapore </p>
+							<a href="https://sggowhere.appspot.com" class="project-link project-description-desktop" draggable="false" target="_blank" rel="noopener"> View webapp </a>
+							<p class="project-description-mobile modal-button" value="#sggowhere-modal-box"> Learn more >> </p>
+						</div>
+						<div class="project-background"></div>
+					</div>
+					<div class="project fade-in fade-up">
+						<img data-src="resources/plane-photo.webp" src="resources/placeholder.png" onerror="this.onerror=null; this.src='resources/plane-photo.jpg'" draggable="false"  class="projects-photo lazyload" alt="Remote controlled plane photo by Zhe Ming"/>
+						<div class="project-description">
+							<h3 class="project-title"> Remote Controlled Plane </h3>
+							<p class="project-description-desktop"> Designed and built over 4 years for the Singapore Amazing Flying Machine Competition <br><br> (The plane holder was built from scrap) </p>
+							<p class="project-description-mobile modal-button" value="#plane-modal-box"> Learn more >> </p>
+						</div>
+						<div class="project-background"></div>
+					</div>
+					<div class="project fade-in fade-up">
+						<img data-src="resources/placesatdhs-screenshot.jpg" src="resources/placeholder.png" draggable="false" class="projects-photo lazyload" alt="Places@DHS web app screenshot by Zhe Ming"/>
+						<div class="project-description">
+							<h3 class="project-title"> Places@DHS </h3>
+							<p class="project-description-desktop"> A location directory for my school, where students can submit their fondest memories about the various locations <br><br> My first webapp </p>
+							<a href="https://placesatdhs.appspot.com/" class="project-link project-description-desktop" draggable="false" target="_blank" rel="noopener"> View webapp </a>
+							<p class="project-description-mobile modal-button" value="#placesatdhs-modal-box"> Learn more >> </p>
+						</div>
+						<div class="project-background"></div>
+					</div>
+					
+					
+					<div class="modal-box" id="cashit-modal-box">
+						<div class="modal-box-projects">
+							<img data-src="resources/cashit-screenshot.webp" src="resources/placeholder.png" onerror="this.onerror=null; this.src='resources/cashit-screenshot.jpg'" draggable="false" class="modal-project-image lazyload" alt="CashIt web app screenshot by Zhe Ming"/>
+							<p> A mobile payment solution for the unbanked. <br><br>Developed for codextreme::Apps 24-hour hackathon, just 6 months after joining computing.<br><br><a href="https://cashitsg.appspot.com" class="project-link" target="_blank" rel="noopener"> View webapp </a></p>
+						</div>
+						<div class="modal-background">
+						</div>
+					</div>
+					<div class="modal-box" id="savinup-modal-box">
+						<div class="modal-box-projects">
+							<img data-src="resources/savinup-screenshot.webp" src="resources/placeholder.png" onerror="this.onerror=null; this.src='resources/savinup-screenshot.jpg'" draggable="false" class="modal-project-image lazyload"/ alt="SavinUp web app screenshot by Zhe Ming">
+							<p> Your personal financial chatbot. <br><br>Developed for BiZiT Festival Standard Chartered Fintech Track <br><br><a href="https://github.com/czming/SavinUp" class="project-link" target="_blank" rel="noopener"> View code </a></p>
+						</div>
+						<div class="modal-background">
+						</div>
+					</div>
+					<div class="modal-box" id="sggowhere-modal-box">
+						<div class="modal-box-projects">
+							<img data-src="resources/sggowhere-screenshot.jpg" src="resources/placeholder.png" draggable="false" class="modal-project-image lazyload" alt="GoWhere@SG web app screenshot by Zhe Ming"/>
+							<p> Ever ran out of things to do? GoWhere@SG will suggest activities for you to do from user-submitted events to landmarks in Singapore <br><br>Second school web development project <br><br><a href="https://sggowhere.appspot.com" class="project-link" target="_blank" rel="noopener"> View webapp </a></p>
+						</div>
+						<div class="modal-background">
+						</div>
+					</div>
+					<div class="modal-box" id="plane-modal-box">
+						<div class="modal-box-projects">
+							<img data-src="resources/plane-photo.webp" src="resources/placeholder.png" onerror="this.onerror=null; this.src='resources/plane-photo.jpg'" draggable="false" class="modal-project-image lazyload" alt="Remote controlled plane photo by Zhe Ming"/>
+							<p> Designed and built over 4 years for the Singapore Amazing Flying Machine Competition <br><br> (The plane holder was built from scrap) </p>
+						</div>
+						<div class="modal-background">
+						</div>
+					</div>
+					<div class="modal-box" id="placesatdhs-modal-box">
+						<div class="modal-box-projects">
+							<img data-src="resources/placesatdhs-screenshot.jpg" src="resources/placeholder.png" draggable="false" class="modal-project-image lazyload" alt="Places@DHS web app screenshot by Zhe Ming"/>
+							<p> A location directory for my school, where students can submit their fondest memories about the various locations <br><br> First school web development project <br><br> <a href="https://placesatdhs.appspot.com/" class="project-link" target="_blank" rel="noopener"> View webapp </a></p>
+							
+						</div>
+						<div class="modal-background">
+						</div>
+					</div>
+					
+				</div>
+			
+			</div>
+		
+			<div class="content-block">
+				<h1 class="content-header fade-in"> Awards</h1>
+				<ul class="award-list">
+					<li class="fade-up fade-in">
+						<h4>Outstanding Achievement Award, Year 6<span class="award-organisation"> (Dunman High School)</span></h4>
+						<p class="award-description"> Given annually to one Year 4 (Sec 4) and Year 6 (JC2) student who have made holistic achievements at their milestone years </p>	
+					</li>
+					<li class="fade-up fade-in">
+						<h4>Land Transport Authority Book Prize <span class="award-organisation"> (Land Transport Authority)</span></h4>
+						<p class="award-description"> Sole school recipient of LTA book prize, to encourage students in Junior College and Integrated Programme to pursue engineering in university. </p>	
+					</li>
+					<li class="fade-up fade-in">
+						<h4>Top in H2 Computing<span class="award-organisation"> (Dunman High School)</span></h4>
+						<p class="award-description"> Topped H2 Computing cohort for Year 6 (JC2) despite only picking up the subject in Year 5 (JC1). </p>	
+					</li>
+					<li class="fade-up fade-in">
+						<h4> 2nd in BiZiT Festival Standard Chartered Fintech Track <span class="award-organisation"> (Standard Chartered Bank and BiZiT Society)</span></h4>
+						<p class="award-description"> Led team to win 2nd in the competition for SavinUp, a personal financial chatbot app. Only winning team consisting mainly of Junior College students against others teams consisting undergraduate students.</p>	
+					</li>					
+					<li class="fade-up fade-in">
+						<h4> Singapore Amazing Flying Machine Competition <span class="award-organisation"> (DSO National Laboratories and Science Centre Singapore)</span></h4>
+						<p class="award-description">Won Championship Award, Best Performance Award, Best Presentation Award and runner-up for the Theory of Flight Award in the remote-controlled plane category in 2017. <br><br>Won Best Presentation Award and runner-up for the Championship Award and Best Performance Award in 2016.<br><br> Led team of 4-5 people for each year's competition since 2014 despite lack of prior experience in remote-controlled planes.</p>	
+					</li>
+					<li class="fade-up fade-in">
+						<h4> Bebras Challenge Singapore 2017 Top Scorer, Junior College Category<span class="award-organisation"> (Bebras Challenge)</span></h4>
+						<p class="award-description"> Got the Gold Award and was top in Singapore for the Junior College category for the international challenge on informatics and computational thinking.</p>	
+					</li>
+					<li class="fade-up fade-in">
+						<h4> 2nd in Code:XtremeApps:: 2016, School Category<span class="award-organisation"> (Infocomm Media Development Authority of Singapore and Information Technology Standards Committee)</span></h4>
+						<p class="award-description"> Led team to win 2nd in the 24-hour hackathon for the mobile payment solution Cashit, developed together with 2 other team mates, and was my first hackathon after just 6 months in computing.</p>	
+					</li>
+					<li class="fade-up fade-in">
+						<h4> Singapore Robotics Games 2016 (Picomouse)</h4>
+						<p class="award-description"> Part of team that won 2nd in the JC/ITE category of Singapore Robotics Games (Picomouse), with this being the first year participating in the competition.</p>	
+					</li>
+				</ul>
+			
+			</div>
+			
+			<div class="content-block content-even">
+				<h1 class="content-header fade-in"> Media</h1>		
+				<div style="text-align:center;vertical-align:middle; position:relative;">
+					<div class="media-box fade-in fade-up">
+						<!-- used jpg and webp based on image size after jpg compression -->
+						<a href="https://www.facebook.com/mindefsg/photos/a-long-time-coming-for-dunman-high-schools-chng-zhe-ming-second-from-right-his-t/10154170539481059/" target="_blank" class="media-link" draggable="false">
+							<img data-src="resources/safmc_mindef.jpg" src="resources/placeholder.png" draggable="false" class="media-image lazyload" style="height:150px;" alt="Zhe Ming - SAFMC prize presentation ceremony"/>
+						</a>
+						<a href="https://www.facebook.com/mindefsg/photos/a-long-time-coming-for-dunman-high-schools-chng-zhe-ming-second-from-right-his-t/10154170539481059/" target="_blank" class="media-link" draggable="false"> Singapore Ministry of Defence Facebook Page</a>
+					</div>
+					<div class="media-box fade-in fade-up">
+						<a href="https://www.zaobao.com.sg/news/singapore/story20180224-837543" target="_blank" class="media-link" draggable="false">
+							<img data-src="resources/lianhezaobao.webp" onerror="this.onerror=null; this.src='resources/lianhezaobao.jpg'" src="resources/placeholder.png" draggable="false" class="media-image lazyload" style="height:300px;" alt="Zhe Ming - Lianhezaobao article"/> 
+						</a>
+						<a href="https://www.zaobao.com.sg/news/singapore/story20180224-837543" target="_blank" class="media-link" draggable="false"> 联合早报, Singapore's largest Chinese-language newspaper</a>
+					</div>
+					<div class="media-box fade-in fade-up">
+						<img data-src="resources/channel8.webp" src="resources/placeholder.png" onerror="this.onerror=null; this.src='resources/channel8.jpg';"  class="media-image lazyload" style="height:150px;" draggable="false" alt="Zhe Ming - Channel 8 Hello Singapore screengrab"/>
+						<p class="media-link" style="margin:0; font-size:1em;"> Mediacorp Channel 8's Hello Singapore</a>
+					</div>
+				</div>
+			</div>
+			<div class="content-block">
+				<h1 class="content-header fade-in"> Courses &amp; Certifications</h1>	
+				<ul class="award-list">
+					<li class="fade-up fade-in">
+						<a href="https://www.datacamp.com/statement-of-accomplishment/track/06acfc3336c21e6003d0ce1321f4871ab51c8fac" target="_blank" class="course-link">Data Manipulation with Python Track</a><span class="award-organisation"> (Datacamp)</span>
+						<p class="award-description"> This four-course track covers the use of pandas, the popular data manipulation and analysis Python library, including the pandas Foundations, Manipulating Dataframes with pandas, Merging Dataframes with pandas and Analyzing Police Activity with pandas courses.</p>
+					</li>
+					<li class="fade-up fade-in">
+						<a href="https://www.coursera.org/account/accomplishments/specialization/L7NHQF4NQH6H" target="_blank" class="course-link">Object Oriented Programming in Java Specialization</a><span class="award-organisation"> (Duke University and University of California, San Diego on Coursera)</span>
+						<p class="award-description"> This four-course specialization teaches learners how to solve complex problems through objected-oriented design with Java, how to program with graphical user interfaces, and design programs capable of managing large amounts of data.</p>
+					</li>
+					<li class="fade-up fade-in">
+						<a href="https://www.coursera.org/account/accomplishments/specialization/2DYEMMQTXHZ9" target="_blank" class="course-link">Google IT Support Professional Certificate</a><span class="award-organisation"> (Google on Coursera)</span>
+						<p class="award-description"> This five-course professional certificate, developed by Google, introduces learners to troubleshooting and customer service, networking, operating systems, system administration and security for an entry role in IT support.</p>
+					</li>
+					<li class="fade-up fade-in">
+						<a href="https://www.coursera.org/account/accomplishments/specialization/8VELDSUR6B9R" target="_blank" class="course-link">Business Foundations Specialization</a><span class="award-organisation"> (University of Pennsylvania on Coursera)</span>
+						<p class="award-description"> This six-course specialization teaches learners the fundamentals of marketing, accounting, operations, and finance. In the final Capstone Project, learners apply the skills learned by developing a go-to-market strategy to address a real business challenge.</p>
+					</li>
+					<li class="fade-up fade-in">
+						<a href="https://www.coursera.org/account/accomplishments/specialization/XE8YBRU7BTTW" target="_blank" class="course-link">Introduction to Discrete Mathematics for Computer Science Specialization</a><span class="award-organisation"> (National Research University Higher School of Economics &amp; University of California San Diego on Coursera)</span>
+						<p class="award-description"> This five-course specialization teaches learners important discrete mathematics concepts in computer science such as combinatorics, graphs, probability and number theory.</p>
+					</li>
+					<li class="fade-up fade-in">
+						<h4>Guzheng (Diploma Grade)<span class="award-organisation"> (Nanyang Academy of Fine Arts)</span></h4>
+						<p class="award-description"> Played the Guzheng for 8 years and achieved the Diploma grade.</p>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+		
+		
+		<div class="footer">
+			<p class="footer-note"> Website by Chng Zhe Ming and hosted with ❤ by GitHub</p>
+			<div class="icon-div">
+				<!-- images from GraphicsFuel.com -->
+				<a href="mailto: zheming@chngzheming.com" target="_blank" rel="noopener"><img data-src="resources/email.gif" src="resources/placeholder.png" draggable="false" class="social-media-icon lazyload" alt="Zhe Ming email link"/></a>
+				<a href="https://www.linkedin.com/in/chng-zhe-ming/" target="_blank" rel="noopener"><img data-src="resources/linkedin.gif" src="resources/placeholder.png" draggable="false" class="social-media-icon lazyload" alt="Zhe Ming LinkedIn link"/></a>
+				<a href="https://www.github.com/czming" target="_blank" rel="noopener"><img data-src="resources/GitHub.gif" src="resources/placeholder.png" draggable="false" class="social-media-icon lazyload" alt="Zhe Ming Github link czming"/></a>
+				<a href="https://www.instagram.com/chngzm/" target="_blank" rel="noopener"><img data-src="resources/instagram.gif" src="resources/placeholder.png" draggable="false" class="social-media-icon lazyload" alt="Zhe Ming Instagram link"/></a>
+			</div>
+		</div>
+		<!-- for IE as it can't read preload-->
+		<link rel="stylesheet" href="css/default.css">
+	</body>
+</html>

@@ -1,0 +1,817 @@
+html{
+	height:100%;
+}
+
+body{
+	color: white;
+	background-color:#040404;
+	margin:0;
+	padding:0;
+	width:100vw;
+	overflow-x:hidden;
+	/*font-family: "Trebuchet MS", Helvetica, sans-serif;*/
+	font-family: 'Ubuntu', sans-serif;
+	-webkit-user-select: none;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor:grab;
+}
+body:active{
+	cursor: grabbing;
+}
+
+
+.hidden{
+	visibility:hidden;
+	opacity: 0;
+}
+
+.intro-div{
+	left:0;
+	top:0;
+	position: fixed;
+	height:100vh;
+	width:100vw;
+	/*sets this element below the other scrolling elements*/
+	z-index:-1;
+	font-size:1em;
+}
+
+
+.intro-text{
+	width:80vw;
+	height:40vh;
+	text-align:center;
+	margin: 45vh 10vw 20vh 10vw;
+	position:fixed;
+	color: #FFFFFF;
+}
+
+.rotate-ninety{
+	-moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}	
+
+.guide-down-div{
+	text-align:center;
+	display:block;
+	bottom:0;
+	width:100vw;
+	padding-bottom:1vh;
+	z-index:1;
+	opacity:1;
+	height:9vh;
+}
+
+.guide-down-arrow{
+	margin:0 auto;
+	font-size:50px; 
+	color:#AAAAAA;
+	vertical-align:middle;
+	width:20px;
+	/*manually align text vertically*/
+	padding-bottom:10px;
+	cursor: pointer;
+
+}
+
+#scroll-up-button{
+	height: 60px;
+	width:60px;
+	border-radius:35px;
+	background-color: #888888;
+	position: fixed;
+	left:50px;
+	bottom:50px;
+	z-index: 4;
+	cursor:pointer;
+	display:none;
+}
+
+#scroll-up-button p{
+	text-align:center;
+	margin-top:3px;
+	font-size:2.5em;
+	color:#CCCCCC;
+}
+
+#scroll-up-button:hover{
+	background-color:#AAAAAA;
+}
+
+#scroll-up-button:active{
+	background-color:#999999;
+}
+
+.nav-bar{
+	top:0;
+	left:0;
+	width:100vw;
+	margin-top:5vh;
+}
+
+/* nav-bar links*/
+.nav-bar-button{
+	display: inline-block;
+	line-height: 20px;
+	width: 17vw;
+	color: #DDDDDD;
+	text-align: center;
+	padding:2.5vh 0 2.5vh 0;
+	text-decoration:none;
+	font-weight:900;
+	border-radius: 0.7vw;
+	font-size:1.2em;
+	margin:0;
+}
+
+.nav-bar-button:hover{
+	cursor: pointer;
+	background-color:#202020;
+}
+
+.nav-bar-slide{
+	position:fixed;
+	margin-top:0;
+	height:auto;
+	top:0;
+	display:none;
+	width:100vw;
+	background-color:#030303;
+	z-index:4;
+}
+
+.nav-bar-slide p{
+	background-color:#030303;
+	margin:0;
+	border-radius:0;	
+}
+
+
+/* meant to prevent subsequent elements from blocking intro-background*/
+.intro-block{
+	position: relative;
+	/*100vh when added with nav bar, 20px for the nav bar button line height*/
+	height:calc(80vh - 20px);
+	/*empty, place behind everything else*/
+	z-index:-3;
+}
+
+#laptop-video{
+	position: fixed;
+	width:100vw;
+	z-index:-2;
+	opacity:0.5;
+	bottom:0;
+}
+
+.content{
+	z-index:0;
+	background-color:#050505;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size:1.2em;
+}
+
+.content-block{
+	padding:20px 3vw;
+	background-color:#111111;
+}
+
+.content-block:hover{
+	background-color:#161616;
+}
+
+.content-even{
+	background-color:#494949;
+}
+.content-even:hover{
+	background-color:#4E4E4E;
+}
+
+.content-block:last-child, #about, #education{
+	padding-bottom:5vh;
+}
+
+.content-block h1{
+	margin:0;
+}
+
+.content-header{
+	text-align:center;
+	padding:15px 5px;
+}
+
+.about-image{
+	display:inline-block; 
+	width:156px; 
+	margin:0 auto;
+	position:absolute;
+	top:45%;
+	right:0;
+	-webkit-transform:translateY(-50%);
+	-moz-transform:translateY(-50%);
+	-o-transform:translateY(-50%);
+	transform:translateY(-50%);
+	padding: 0 20px;
+}
+
+.about-text{
+	display:inline-block;
+	padding: 0 2vw;
+	width: calc(86vw - 156px);
+}
+
+.about-content{
+	position:relative;
+}
+
+.school-title p{
+	margin: 5px 0;
+
+}
+
+.education-subject-box{
+	width:120px;
+	height:120px;
+	text-align:center;
+	position:relative;
+	padding:12px;
+	font-weight:bold;
+	display:inline-block;
+	vertical-align:middle;
+	margin-left:-5px;
+	-webkit-transition: -webkit-transform 0.5s ease-in-out;
+	-moz-transition:-moz-transform 0.5s ease-in-out;
+	-o-transition:-o-transform 0.5s ease-in-out;
+	transition:transform 0.5s ease-in-out;
+	perspective: 500px;
+	-webkit-perspective:500px;
+}
+
+.education-subject{
+	position:absolute;
+	top:50%;
+	left:0;
+	width: calc(100% - 10px);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	line-height:20px;
+	margin:0;
+	padding: 0 5px;
+}
+
+.box-placeholder{
+	display:inline-block;
+	text-align:center;
+	/*needed to address error with rotateY on ios*/
+	-webkit-perspective:500px;
+	perspective:500px;
+}
+
+.rotate-forward{
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+	-o-transform: rotateY(-180deg);
+	transform: rotateY(-180deg); 
+}
+
+
+.rotate-back{
+	
+	-webkit-transform:rotateY(0deg);
+	-moz-transform:rotateY(0deg);
+	-o-transform:rotateY(0deg);
+	transform:rotateY(0deg);
+}
+
+.back{
+	-webkit-transform: rotateY(-180deg) translateY(-50%);
+	-moz-transform: rotateY(-180deg) translateY(-50%);
+	-o-transform: rotateY(-180deg) translateY(-50%);
+	transform: rotateY(-180deg) translateY(-50%);
+}
+
+
+.skills-div{
+	margin: 5vh 10vw;
+	display:table;
+	position:relative;
+}
+
+.logo-div{
+	float:left;
+	display:table-cell;
+	text-align:center;
+	font-size:25px;
+	width:auto;
+}
+
+.bar-div{
+	display:table-cell;
+	width:100%;
+}
+
+/*text will align vertically middle within the line height*/
+p.languages-logo{
+	line-height:40px;
+	display:block;
+	margin:10px auto;
+	padding: 0 10px;
+	font-size: 0.7em;
+	background-color: #111111;
+	border-radius: 15px 0 0 15px;
+	font-weight:900;
+}
+
+.expanding-bar{
+	display:none;
+	/*same as the height of logo*/
+	height:40px;
+	width:0%;
+	background-image: linear-gradient(to right, #006dc8, #00b0bb);
+	border-radius: 0 15px 15px 0;
+	margin:10px 0;
+}
+
+p.expanding-bar-text{
+	position:absolute;
+	font-size:0.8em;
+	line-height:40px;
+	margin: 0 2%;
+}
+
+.projects-div{
+	margin:5vw 10vw;
+	text-align:center;
+}
+
+.project{
+	width:33%;
+	display:inline-block;
+	/*to balance the gap due to inline-block, when compressed, the margins at the side are lost*/
+	margin: -3px -2px;
+	padding:0;
+	/*so project-description can use position:absolute*/
+	position:relative;
+	
+}
+
+.projects-photo{
+	/*for transition when removing .fade-up*/
+	width:100%;
+
+	margin:0;
+	padding:0;
+	height:100%;
+	/*removes little bit of whitespace below image*/
+	display:block;
+}
+
+.project-description{
+	text-align:left;
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:80%;
+	z-index:1;
+	visibility:hidden;
+	opacity:0;
+	padding: 0 10%;
+	font-size:0.9em;
+	background-color:#4E4E4E;
+}
+
+.project-description:hover{
+	opacity:1;
+	visibility:visible;
+}
+
+.project-description-mobile{
+	background-color:#111111;
+	margin-top:10%;
+	padding: 10px;
+	border-radius:5px;
+	font-weight:bold;
+	display:none;
+}
+
+.project-description-mobile:hover{
+	background-color: #202020;
+	cursor:pointer;
+}
+
+	
+.project-title{
+	font-weight:bold;
+}
+	
+.project-link{
+	background-color: #111111;
+	padding:10px 15px;
+	border-radius:5px;
+	display:inline-block;
+	margin:0 0 5vh 0;
+	color: #DDDDDD;
+	text-align: center;
+	text-decoration:none;
+	font-weight:900;
+}
+
+.project-link:hover{
+	background-color:#202020;
+}
+
+
+.award-organisation{
+	font-style:italic;
+	font-weight:normal;
+}
+	
+.award-list{
+	padding-inline-start: 20px;
+	padding-right:20px;
+}
+
+
+.award-description{
+	font-size:0.9em;
+	color:#CCCCCC;
+	margin:	1.33em 0 1.33em 0;
+}
+
+.media-box{
+	display:inline-block;
+	vertical-align:middle;
+	max-width:300px;
+	text-align:center;
+	margin: 10px;
+	
+}
+
+.media-image{
+	margin: 30px 0;
+	max-width:300px;
+	border: 3px solid white;
+}
+
+.media-link{
+	display:block;
+	color:white;
+	text-align:center;
+}
+
+/*when media box is hovered, add box shadow to the image which has a link, which would be descendent
+of a.media-link class*/
+.media-box:hover .media-link img{
+	box-shadow:0px 0px 8px 6px #666666;
+}
+
+/*for popup modal box*/
+.modal-box{
+	display:none;
+	position:fixed;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	z-index:5;
+}
+
+.modal-box-projects{
+	position:relative;
+	top:50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	left:0;
+	width: 70vw;
+	max-width: 60vh;
+	max-height:90vh;
+	background-color:#666666;
+	margin:0 auto;
+	z-index:1;
+	text-align:left;
+	overflow-y:auto;
+	min-height: 50vh;
+}
+
+.modal-box-projects p{
+	padding:0 5vw;
+	font-size:1em;
+}
+
+.modal-background{
+	height:100%;
+	width:100%;
+	top:0;
+	left:0;
+	position:absolute;
+	opacity:0.7;
+	background-color:#222222;
+	z-index:0;
+}
+
+.modal-project-image{
+	width:100%;
+	margin: 0 auto;
+}
+
+.course-link{
+	color:white;
+	font-decoration: underline;
+	font-weight:bold;
+	font-size:1em;
+}
+
+.footer{
+	margin:0 0 0 0;
+	background-color: #050505;
+	padding:5vh 20px 5vh 20px;
+}
+
+.fade-in{
+	opacity:0;
+}
+
+.icon-div{
+	position:relative;
+	/* not sure why such an odd number considering that sizes and margins are rounded numbers, later also 218 for the mobile version*/
+	width: 212px;
+	margin: 0 auto 0 auto;
+}
+
+.social-media-icon{
+	display: inline-block;
+	height:40px;
+	margin: 0 5px 0 5px;
+	border-radius: 20px;
+}
+
+.social-media-icon:hover{
+	box-shadow:0px 0px 8px 4px #444444;
+}
+
+.footer p{
+	text-align:center;
+	color:white;
+	margin: 0 0 15px 0;
+}
+
+.mobile-only{
+	display:none;
+}
+
+/*video aspect ratio is 16/9, so anything smaller but not yet portrait, use vh instead so the whole screen is covered*/
+@media screen and (max-aspect-ratio: 16/9){
+	#laptop-video{
+		left:50%;
+		margin-left: -88.888vh;
+		height:100vh;
+		/*update width value, simpler way?*/
+		width: 177.777vh;
+	}
+	/* intro block still only covers 100vh so on next scroll, user can see content*/
+}
+/* might want to change according to aspect ratio such that still landscape but aspect ratio smaller than 1.777:1 then we go by height*/
+@media screen and (orientation:portrait){
+	.intro-div{
+		height:80vh;
+	}
+	.guide-down-div{
+		bottom:21vh;
+		padding-bottom:2vh;
+		height:8vh;
+	}
+	/* video for mobile devices won't cover whole height of screen*/
+	#laptop-video{
+		left:50%;
+		margin-left: -62.222vh;
+		height:80vh;
+		/*update width value, simpler way?*/
+		width: 142.222vh;
+		bottom:initial;
+	}
+	.intro-block{
+		height:calc(60vh - 20px);
+	}
+	.intro-text{
+		margin-top:40vh;
+	}
+	
+	.nav-bar-button{
+		width:32.6vw;
+		display:none;
+	}
+	/*only show these nav bar buttons since they are more important*/
+	.nav-bar-mobile{
+		display:inline-block;
+	}
+	
+	.skills-div{
+		margin:5vh 0vw;
+	} 
+	
+	
+	.social-media-icon{
+		height:45px;
+		margin: 0 7px 0 7px;
+		border-radius: 23px;
+	}
+	.social-media-icon:hover{
+		box-shadow:0px 0px 10px 5px #444444;
+	}
+	.icon-div{
+		width:248px;
+		margin: 0 auto 0 auto;	
+	}
+}
+
+
+@media screen and (max-width: 1000px){
+	.projects-div{	
+		margin:5vw 0;
+	}
+	.project{
+		width:50%;
+	}
+	.projects-photo{
+		width:100%;
+	}
+	.project-description-desktop, .project-link{
+		font-size:1.1em;
+	}
+	/*bar too short, need to remove gradient*/
+	.expanding-bar{
+		background-image:none;
+		background-color: #006dc8;
+	}
+	
+}
+
+@media screen and (max-width: 800px){
+	.about-image{
+		display:block;
+		position:relative;
+		-webkit-transform:none;
+		-moz-transform:none;
+		-o-transform:none;
+		transform:none;
+	}
+
+	.about-text{
+		display:block;
+		width: auto;
+	}
+	
+	/* only show mobile and remove desktop version*/
+	.desktop-only{
+		display:none;
+	}
+	.mobile-only{
+		display: block;
+	}
+}
+
+@media screen and (max-width: 600px){
+	/*scroll-up-button interferes with footer icons*/
+	#scroll-up-button{
+		visibility:hidden;
+	}
+	/*buys more space so intro text doesn't go into second line until device width less than ~320px*/
+	.intro-text{
+		margin-left:5vw;
+		margin-right:5vw;
+		width:90vw;
+	}
+	
+	.logo-div{
+		font-size:20px;
+	}
+
+
+	p.languages-logo{
+		/*line-height only leads to minor difference in the height so manually set height*/
+		height:35px;
+		line-height:35px;
+	}
+
+	.expanding-bar{
+		/*same as the height of logo*/
+		height:35px;
+	}
+
+	p.expanding-bar-text{
+		position:absolute;
+		font-size:0.7em;
+		line-height:35px;
+		margin: 0 2%;
+	}
+	
+	.project-description-mobile{
+		display:inline-block;
+	}
+	.project-description-desktop{
+		display:none;
+	}
+	
+}
+
+@media screen and (max-width:400px){
+	.nav-bar-button{
+		width:32.4vw;
+	}
+	.content p{
+		font-size:0.9em;
+	}
+}
+
+
+
+@media screen and (min-height: 750px) and (orientation:portrait){
+	/*tablets and bigger phones like iPhoneX in portrait*/
+	.guide-down-div{
+		height: 7vh;
+		padding-bottom:0;
+	}	
+	.intro-block{
+		height: calc(63vh - 20px);
+	}
+	.content p{
+		font-size:0.9em;
+	}
+	
+}
+
+@media screen and (min-height:800px) and (orientation:landscape){
+	/*big devices in landscape mode*/
+	.intro-block{
+		height: calc(83vh - 20px);
+	}
+}
+
+@media screen and (max-height: 450px) and (orientation:landscape){
+	/*phone in landscape mode, short height, large width*/
+	.guide-down-div{
+		padding-bottom:8vh;
+	}
+	.intro-block{
+		height: calc(73vh - 20px);
+	}
+	.project-link, .content p{
+		font-size:0.9em;
+	}
+	.modal-box-projects p{
+		font-size:0.8em;
+	}
+	p.languages-logo{
+		font-size: 0.6em;
+	}
+	p.expanding-bar-text{
+		font-size: 0.7em;
+	}
+}
+
+@media screen and (orientation:landscape){
+	.modal-box-projects{
+		width:80vw;
+		max-width:80vw;
+		max-height:90vh;
+	}
+	.modal-box-projects p{
+		padding:0 2vw;
+		display:inline-block;
+		width: 35vw;
+		vertical-align:top;
+		margin-bottom: 0;
+		
+	}
+	.modal-project-image{
+		display:inline-block;
+		height:auto;
+		width:39vw;
+		/* compensate for margin at bottom of inline box*/
+		margin-bottom:-6px;
+	}	
+	.content-block:last-child, #about, #education{
+		padding-bottom:10vh;
+	}
+}
+
+
+/* takes precendence over all*/
+.fade-up{
+	-webkit-transform:translateY(60px);
+	-moz-transform:translateY(60px);
+	-o-transform:translateY(60px);
+	transform:translateY(60px);
+	opacity:0;
+	visibility:hidden;
+}
