@@ -556,7 +556,7 @@ of a.media-link class*/
 }
 
 .social-media-icon:hover{
-	box-shadow:0px 0px 8px 4px #444444;
+	box-shadow:0px 0px 10px 7px #666666;
 }
 
 .footer p{
@@ -626,7 +626,7 @@ of a.media-link class*/
 		border-radius: 23px;
 	}
 	.social-media-icon:hover{
-		box-shadow:0px 0px 10px 5px #444444;
+		box-shadow:0px 0px 11px 7px #444444;
 	}
 	.icon-div{
 		width:248px;
@@ -634,8 +634,14 @@ of a.media-link class*/
 	}
 }
 
+@media screen and (max-width: 1200px){
+	.project-description-desktop, .project-link{
+		/* shrink to fit in the box*/
+		font-size:0.95em;
+	}
+}
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1100px){
 	.projects-div{	
 		margin:5vw 0;
 	}
@@ -743,9 +749,6 @@ of a.media-link class*/
 	}	
 	.intro-block{
 		height: calc(63vh - 20px);
-	}
-	.content p{
-		font-size:0.9em;
 	}
 	
 }
