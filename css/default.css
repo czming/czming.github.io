@@ -727,6 +727,9 @@ of a.media-link class*/
 	.project-description-desktop{
 		display:none;
 	}
+	.project-title{
+		font-size:1em;
+	}
 	
 }
 
@@ -735,6 +738,9 @@ of a.media-link class*/
 		width:32.4vw;
 	}
 	.content p{
+		font-size:0.9em;
+	}
+	.project-title{
 		font-size:0.9em;
 	}
 }
@@ -750,7 +756,7 @@ of a.media-link class*/
 	.intro-block{
 		height: calc(63vh - 20px);
 	}
-	
+
 }
 
 @media screen and (min-height:800px) and (orientation:landscape){
@@ -786,15 +792,18 @@ of a.media-link class*/
 	.modal-box-projects{
 		width:80vw;
 		max-width:80vw;
-		max-height:90vh;
+		max-height:39vw;
+		overflow:hidden;
 	}
+	
 	.modal-box-projects p{
 		padding:0 2vw;
 		display:inline-block;
 		width: 35vw;
 		vertical-align:top;
 		margin-bottom: 0;
-		
+		max-height:39vw;
+		overflow-y: scroll;
 	}
 	.modal-project-image{
 		display:inline-block;
@@ -803,6 +812,7 @@ of a.media-link class*/
 		/* compensate for margin at bottom of inline box*/
 		margin-bottom:-6px;
 	}	
+	
 	.content-block:last-child, #about, #education{
 		padding-bottom:10vh;
 	}
