@@ -473,6 +473,16 @@ of a.media-link class*/
 	box-shadow:0px 0px 8px 6px #666666;
 }
 
+.project-description-desktop, .project-link{
+	/* shrink to fit in the box*/
+	font-size:0.9em;
+}
+
+#buildingblocs-title{
+	/* particularly long title, need to shrink size*/
+	font-size:1em;
+}
+
 /*for popup modal box*/
 .modal-box{
 	display:none;
@@ -637,11 +647,14 @@ of a.media-link class*/
 @media screen and (max-width: 1200px){
 	.project-description-desktop, .project-link{
 		/* shrink to fit in the box*/
-		font-size:0.95em;
+		font-size:0.8em;
+	}
+	#buildingblocs-title{
+		font-size: 0.9em;
 	}
 }
 
-@media screen and (max-width: 1100px){
+@media screen and (max-width: 1000px){
 	.projects-div{	
 		margin:5vw 0;
 	}
@@ -652,7 +665,7 @@ of a.media-link class*/
 		width:100%;
 	}
 	.project-description-desktop, .project-link{
-		font-size:1.1em;
+		font-size:1em;
 	}
 	/*bar too short, need to remove gradient*/
 	.expanding-bar{
