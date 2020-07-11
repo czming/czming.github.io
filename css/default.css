@@ -185,10 +185,12 @@ body:active{
 	background-color:#161616;
 }
 
-.content-even{
+
+.content-block:nth-child(even) {
 	background-color:#494949;
 }
-.content-even:hover{
+
+.content-block:nth-child(even):hover {
 	background-color:#4E4E4E;
 }
 
@@ -229,7 +231,7 @@ body:active{
 	position:relative;
 }
 
-.school-title p{
+.school-title,.experience-title p{
 	margin: 5px 0;
 
 }
@@ -503,6 +505,7 @@ of a.media-link class*/
 	transform: translateY(-50%);
 	left:0;
 	width: 70vw;
+	height:80vh;
 	max-width: 60vh;
 	max-height:90vh;
 	background-color:#666666;
@@ -511,6 +514,7 @@ of a.media-link class*/
 	text-align:left;
 	overflow-y:auto;
 	min-height: 50vh;
+	border-radius: 20px;
 }
 
 .modal-box-projects p{

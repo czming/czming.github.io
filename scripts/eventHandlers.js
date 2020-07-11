@@ -14,8 +14,8 @@ $.fn.fadeInScroll = function(currScroll){
 		var heightFactor = 1;
 		
 		//if object is small, make it appear bigger for smoother fadein
-		if (objectHeight < 250){
-			objectHeight = 250;
+		if (objectHeight < 150){
+			objectHeight = 150;
 		}
 		
 		// if object is more than 40% of the screen size, let everything show at half screen
@@ -190,10 +190,10 @@ rotateTime = 500;
 $(".box-placeholder").hover(function(){
 	//used same method as .project, assigned the timeout id to the element itself then cancel the timeout from there
 	clearTimeout($(this).children(".education-subject-box").attr("rotate"));
-	var rotateForward = setTimeout(function(){
-		$(this).find(".front").addClass("hidden");
-		$(this).find(".back").removeClass("hidden");
-	}.bind($(this)), rotateTime/2);
+	var rotateForward = setTimeout(function(that){
+		$(that).find(".front").addClass("hidden");
+		$(that).find(".back").removeClass("hidden");
+	}, rotateTime/2, this);
 	
 	//set rotation time
 	$(this).children(".education-subject-box").removeClass("rotate-back").addClass("rotate-forward").attr("rotate", rotateForward);
@@ -201,10 +201,10 @@ $(".box-placeholder").hover(function(){
 
 }, function(){
 	clearTimeout($(this).children(".education-subject-box").attr("rotate"));
-	var rotateBackward = setTimeout(function(){
-		$(this).find(".front").removeClass("hidden");
-		$(this).find(".back").addClass("hidden");
-	}.bind($(this)), rotateTime/2);	
+	var rotateBackward = setTimeout(function(that){
+		$(that).find(".front").removeClass("hidden");
+		$(that).find(".back").addClass("hidden");
+	}, rotateTime/2, this);	
 	$(this).children(".education-subject-box").removeClass("rotate-forward").addClass("rotate-back").attr("rotate", rotateBackward);
 
 	
