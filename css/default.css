@@ -212,12 +212,8 @@ body:active{
 	width:156px; 
 	margin:0 auto;
 	position:absolute;
-	top:45%;
+	top: calc(47% - 78px);
 	right:0;
-	-webkit-transform:translateY(-50%);
-	-moz-transform:translateY(-50%);
-	-o-transform:translateY(-50%);
-	transform:translateY(-50%);
 	padding: 0 20px;
 }
 
@@ -339,6 +335,10 @@ p.languages-logo{
 	background-image: linear-gradient(to right, #006dc8, #00b0bb);
 	border-radius: 0 15px 15px 0;
 	margin:10px 0;
+    -webkit-transition: width 500ms linear; 
+    -moz-transition: width 500ms linear;
+    -o-transition: width 500ms linear;
+    transition: width 500ms linear;
 }
 
 p.expanding-bar-text{

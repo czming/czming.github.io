@@ -260,6 +260,7 @@ $wd.scroll(function(){
 	
 	
 	//start fading in the whole element (it starts at 0.2*window height) then slide in
+    //
 	if(!skillBarShown && currScroll + windowHeight >= $(".skills-div").position().top + 0.4 * windowHeight){
 		// reached the skills-div, unroll the graphs
 		//max years, everything else should be divided by this to get their length, bar length arrange in descending order of experience
@@ -267,7 +268,10 @@ $wd.scroll(function(){
 		$(".expanding-bar").each(function(){
 			var percentExperience = $(this).attr("value")/ maxExperience * 100;
 			percentExperience = percentExperience.toString()
-			$(this).fadeIn(500).animate({"width":percentExperience + "%"},1000);
+            //use css instead of attr, attribute seems to have lower precedence than stuff in the CSS stylesheet, even for the class?
+			$(this).fadeIn(500);
+            //need to use timeout instead of delay because .css doesn't go through animation pipeline as it is an instant atomic operation
+            setTimeout(function(that){$(that).css({"width":percentExperience + "%"})},500,this);
 		});
 	}
 	
