@@ -328,6 +328,7 @@ p.languages-logo{
 }
 
 .expanding-bar{
+    
 	display:none;
 	/*same as the height of logo*/
 	height:40px;
@@ -335,10 +336,10 @@ p.languages-logo{
 	background-image: linear-gradient(to right, #006dc8, #00b0bb);
 	border-radius: 0 15px 15px 0;
 	margin:10px 0;
-    -webkit-transition: width 500ms linear; 
-    -moz-transition: width 500ms linear;
-    -o-transition: width 500ms linear;
-    transition: width 500ms linear;
+    -webkit-transition: width 700ms linear; 
+    -moz-transition: width 700ms linear;
+    -o-transition: width 700ms linear;
+    transition: width 700ms linear;
 }
 
 p.expanding-bar-text{
