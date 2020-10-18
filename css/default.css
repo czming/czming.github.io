@@ -209,12 +209,11 @@ body:active{
 
 .about-image{
 	display:inline-block; 
-	width:156px; 
+	width:200px; 
 	margin:0 auto;
 	position:absolute;
 	top: calc(47% - 78px);
-	right:0;
-	padding: 0 20px;
+	right:-10px;
 }
 
 .about-text{
