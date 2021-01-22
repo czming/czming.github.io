@@ -162,8 +162,8 @@ $(".nav-bar-button, #scroll-up-button").on("click", function(){
 		justNav = true;
 		navBarScrollUp();
 	}
-	//give a bit of space between the target and the top
-	$("html,body").animate({scrollTop:findLocation-0.15 * windowHeight}, scrollTime);
+	//give extra space for the nav-bar
+	$("html,body").animate({scrollTop:findLocation - windowHeight / 20 - 20}, scrollTime);
 	//after slightly more than the time to scroll to target, then scrolling down will cause nav-bar-scroll to scroll up
 	setTimeout(function(){justNav=false;}, scrollTime+50);
 });
