@@ -226,9 +226,12 @@ body:active{
 	position:relative;
 }
 
-.school-title,.experience-title p{
+.experience-title p{
 	margin: 5px 0;
+}
 
+.school-title h3{
+	margin:1em 0 0 0;
 }
 
 .education-subject-box{
@@ -236,7 +239,7 @@ body:active{
 	height:120px;
 	text-align:center;
 	position:relative;
-	padding:12px;
+	padding:20px;
 	font-weight:bold;
 	display:inline-block;
 	vertical-align:middle;
@@ -354,7 +357,7 @@ p.expanding-bar-text{
 }
 
 .project{
-	width:33%;
+	width:30%;
 	display:inline-block;
 	/*to balance the gap due to inline-block, when compressed, the margins at the side are lost*/
 	margin: -3px -2px;
@@ -441,11 +444,14 @@ p.expanding-bar-text{
 	padding-right:20px;
 }
 
+.award-list li{
+	margin:	1.33em 0 1.33em 0;
+}
+
 
 .award-description{
 	font-size:0.9em;
 	color:#CCCCCC;
-	margin:	1.33em 0 1.33em 0;
 }
 
 .media-box{
@@ -504,8 +510,8 @@ of a.media-link class*/
 	-o-transform: translateY(-50%);
 	transform: translateY(-50%);
 	left:0;
-	width: 70vw;
-	height:80vh;
+	width: 80vw;
+	height: 80vh;
 	max-width: 60vh;
 	max-height:90vh;
 	background-color:#666666;
@@ -648,7 +654,11 @@ of a.media-link class*/
 	}
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1300px){
+	.project{
+		width:33%;
+	}
+
 	.project-description-desktop, .project-link{
 		/* shrink to fit in the box*/
 		font-size:0.8em;
@@ -663,7 +673,7 @@ of a.media-link class*/
 		margin:5vw 0;
 	}
 	.project{
-		width:50%;
+		width:40%;
 	}
 	.projects-photo{
 		width:100%;
@@ -680,6 +690,11 @@ of a.media-link class*/
 }
 
 @media screen and (max-width: 800px){
+
+	.project{
+		width:50%;
+	}
+
 	.about-image{
 		display:block;
 		position:relative;
@@ -703,7 +718,8 @@ of a.media-link class*/
 	}
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 700px){
+
 	/*scroll-up-button interferes with footer icons*/
 	#scroll-up-button{
 		visibility:hidden;
@@ -820,7 +836,7 @@ of a.media-link class*/
 		vertical-align:top;
 		margin-bottom: 0;
 		max-height:39vw;
-		overflow-y: scroll;
+		overflow-y: auto;
 	}
 	.modal-project-image{
 		display:inline-block;
