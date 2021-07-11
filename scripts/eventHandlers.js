@@ -73,6 +73,15 @@ function navBarScrollDown(){
 
 //main script
 
+//reduce DOM calls when scrolling
+$fadeIn = $(".fade-in");
+$scrollUpButton = $("#scroll-up-button");
+$laptopVideo = $("#laptop-video");
+$guideDownArrow = $(".guide-down-arrow");
+$navBarSlide = $(".nav-bar-slide");
+$fadeUp = $(".fade-up");
+$contentHeader = $(".content-header");
+
 $(".modal-button").on("click", function(){
 	var modalBoxID = $(this).attr("value");
 	$(modalBoxID).fadeIn(500);
@@ -171,6 +180,24 @@ $(".nav-bar-button, #scroll-up-button").on("click", function(){
 //when window loads, scroll a bit to check the elements
 $wd.scrollTop(1);
 
+//setting up typing effect for the content headers
+$contentHeader.each(function(){
+	contentHeaderTypedOptions[$(this).attr("id")] = {
+		typeSpeed: 50,
+		loop:false,
+		backSpeed: 10,
+		smartBackspace:true,
+		showCursor:false,
+		startDelay:0,
+		backDelay:100,
+		strings:["&nbsp;", $(this).attr("content")]
+	};
+
+	contentHeaderTyped[$(this).attr("id")] = new Typed("#" + $(this).attr("id"), contentHeaderTypedOptions[$(this).attr("id")]);
+
+	contentHeaderTyped[$(this).attr("id")].stop();
+});
+
 
 $(".project").hover(function(){
 	//removes this so it can't be run, save fadeout to target the correct one for that element
@@ -261,7 +288,7 @@ $wd.scroll(function(){
 	
 	//start fading in the whole element (it starts at 0.2*window height) then slide in
     //
-	if(!skillBarShown && currScroll + windowHeight >= $(".skills-div").position().top + 0.4 * windowHeight){
+	if(!skillBarShown && currScroll + windowHeight >= $("#programming-languages-chart").position().top + 0.4 * windowHeight){
 		// reached the skills-div, unroll the graphs
 		//max years, everything else should be divided by this to get their length, bar length arrange in descending order of experience
 		var maxExperience = $(".expanding-bar:first-child").attr("value");
@@ -283,6 +310,14 @@ $wd.scroll(function(){
 		}
 
 	});
+
+	$contentHeader.each(function(){
+		if ($(this).attr("typed") != "true" && currScroll+windowHeight >= $(this).offset().top + 0.2 * windowHeight) {
+			$(this).attr("typed", "true");
+			console.log($(this).attr("id"));
+			contentHeaderTyped[$(this).attr("id")].start();
+		}
+	})
 		
 	if (currScroll < 0.6 * windowHeight && !justNav){
 		navBarScrollUp();

@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<link rel="preload" href="resources/screen-loading.gif" as="image">
-		<!--set up connects with the external sources first, crossorigin only for img,js and video-->
+		<!--set up connects with the external sources first, crossorigin only for img, js and video-->
 		<link rel="preconnect" href="https://ajax.googleapis.com/" crossorigin>
 		<link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
 		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -10,11 +10,12 @@
 		<script>window.lazyLoadOptions = {elements_selector: ".lazyload"};</script>
 		<style>::-webkit-scrollbar{width:6px;} ::-webkit-scrollbar-track{box-shadow: inset 0 0 5px #111111;border-radius:5px;} ::-webkit-scrollbar-thumb{background:#444444;border-radius:5px;} ::-webkit-scrollbar-thumb:hover{background: #777777;}</style>
 		<script type="text/javascript" src="scripts/jquery-3.4.1.min.js" defer></script>
+		<script type="text/javascript" src="scripts/typed.min.js" defer></script>
 		<script type="text/javascript" src="scripts/default.min.js" defer></script>
 		<meta name="description" content="Hi, I'm Zhe Ming, an aspiring software developer that likes to build, create and develop."/>
 		<meta name="author" content="Chng Zhe Ming">
 		<title> Zhe Ming. </title>
-		<!--lazyload plugin from Github by Andrea Verlicchi under MIT License-->
+		<!--lazyload plugin from Github by Andrea Verlicchi under MIT License, attached at scripts/MIT-License.txt-->
 		<script type="text/javascript" src="scripts/lazyload.min.js" defer></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<meta charset="UTF-8">
@@ -66,11 +67,17 @@
 		</div>
 		<div class="content">	
 			<div class="content-block" id="about">
-				<h1 class="content-header fade-in"> Who am I?</h1>
+				<div class="content-header-placeholder-div">
+					<!-- div to occupy space of type component-->
+					<h1 class="content-header-placeholder">Who am I?</h1>
+				</div>
+				<div class="content-header-div fade-in">
+					<!-- to balance out the blinking cursor to have the text without the cursor centered-->
+					<h1 class="content-header" id="about-header" content="Who am I?"></h1>
+				</div>
 				<div class="about-content">
 					<div class="fade-in fade-up about-image">
 						<img src="resources/profile-photo.webp" onerror="this.onerror=null; this.src='resources/profile-photo.jpg'" draggable="false" style="width:175px; border:4px solid white;border-radius:100px;" alt="Zhe Ming profile photo" />
-						<!--<p style="font-size:0.5em;text-align:center;margin:0;"> (Yes I'm a little shy)</p>-->
 					</div>
 					<div class="fade-in fade-up about-text">
                         <!-- maybe can add a read more to this section for small mobile screens -->
@@ -83,7 +90,14 @@
 			</div>
 			
 			<div class="content-block" id="experience">
-				<h1 class="content-header fade-in"> Experience </h1> 	
+				<div class="content-header-placeholder-div">
+					<!-- div to occupy space of type component-->
+					<h1 class="content-header-placeholder">Experience</h1>
+				</div>
+				<div class="content-header-div fade-in">
+					<!-- to balance out the blinking cursor to have the text without the cursor centered-->
+					<h1 class="content-header" id="experience-header" content="Experience"></h1>
+				</div>
 				<!-- Mistletoe internship -->
 				<div class="experience-title fade-in fade-up">
 					<p style="font-weight:900;text-decoration:underline;"> Robotics Intern <span style="font-style:italic"> (Mistletoe Inc.)</span></p>
@@ -140,8 +154,15 @@
 
 
 			<div class="content-block" id="education">
+				<div class="content-header-placeholder-div">
+					<!-- div to occupy space of type component-->
+					<h1 class="content-header-placeholder">Education</h1>
+				</div>
+				<div class="content-header-div fade-in">
+					<!-- to balance out the blinking cursor to have the text without the cursor centered-->
+					<h1 class="content-header" id="education-header" content="Education"></h1>
+				</div>
 				<!-- Georgia Tech -->
-				<h1 class="content-header fade-in"> Education </h1> 	
 				<div class="school-title fade-in fade-up">
 					<h3 style="font-weight:900;text-decoration:underline;"> Georgia Institute of Technology <span style="font-style:italic"> (Bachelor of Science)</span></h3>
 					<p style="font-style:italic;"> 2020-2024 </p>
@@ -169,25 +190,25 @@
 				<p class="fade-up fade-in"><span style="font-weight:bold;"> Co-curricular Activities:</span> Robotics (2012-2017), Tennis (2016-2017) and Infocomm (2016-2017) </p>
 				<div style="text-align:center;" class="fade-in fade-up">
 					<div class="box-placeholder"> 
-						<div class="education-subject-box" style="background-color:#333333;">
+						<div class="education-subject-box" style="background-color:#555555;">
 							<div class="education-subject front"> Robotics <br>(Senior High)</div> 
 							<div class="education-subject back hidden" style="font-size:0.7em;"> Executive Committee, Head of Singapore Amazing Flying Machine Competition</div>
 						</div>
 					</div>
 					<div class="box-placeholder"> 
-						<div class="education-subject-box" style="background-color:#555555;">
+						<div class="education-subject-box" style="background-color:#777777;">
 							<div class="education-subject front"> Robotics <br>(Junior High)</div> 
 							<div class="education-subject back hidden"> Executive Committee, Head of Logistics</div>
 						</div>
 					</div>
 					<div class="box-placeholder"> 
-						<div class="education-subject-box" style="background-color:#777777;">
+						<div class="education-subject-box" style="background-color:#999999;">
 							<div class="education-subject front"> Tennis </div> 
 							<div class="education-subject back hidden"> Executive Committee, Quartermaster</div>
 						</div>
 					</div>
 					<div class="box-placeholder"> 
-						<div class="education-subject-box" style="background-color:#999999;">
+						<div class="education-subject-box" style="background-color:#BBBBBB;">
 							<div class="education-subject front"> Infocomm </div> 
 							<div class="education-subject back hidden"> Member</div>
 						</div>
@@ -201,13 +222,20 @@
 					<h3 style="font-weight:900;text-decoration:underline;"> Nanyang Technological University <span style="font-style:italic"> (Non-Graduating Student)</span></h3>
 					<p style="font-style:italic;"> 2017 </p>
 				</div>
-				<p class="fade-in fade-up" style="font-weight:bold;">H3 Semiconductor and Devices: Distinction</p>
+				<p class="fade-in fade-up" style="font-weight:bold;">H3 Semiconductor and Devices: <span style="font-weight:normal">Distinction</span></p>
 				<br><br>
 				
 			</div>
-			<div class="content-block" id="skills">
-				<h1 class="content-header fade-in"> Programming Languages </h1>
-				<div class="skills-div fade-in fade-up">
+			<div class="content-block" id="programming-languages">
+				<div class="content-header-placeholder-div">
+					<!-- div to occupy space of type component-->
+					<h1 class="content-header-placeholder">Programming Languages</h1>
+				</div>
+				<div class="content-header-div fade-in">
+					<!-- to balance out the blinking cursor to have the text without the cursor centered-->
+					<h1 class="content-header" id="programming-languages-header" content="Programming Languages"></h1>
+				</div>
+				<div class="fade-in fade-up" id="programming-languages-chart">
 					<div class="logo-div">
 						<p class="languages-logo"> Python</p>
 						<p class="languages-logo"> HTML/CSS</p>
@@ -247,7 +275,14 @@
 			</div>
 			
 			<div class="content-block" id="presentations">
-				<h1 class="content-header fade-in"> Talks & Presentations </h1>
+				<div class="content-header-placeholder-div">
+					<!-- div to occupy space of type component-->
+					<h1 class="content-header-placeholder">Talks and Presentations</h1>
+				</div>
+				<div class="content-header-div fade-in">
+					<!-- to balance out the blinking cursor to have the text without the cursor centered-->
+					<h1 class="content-header" id="presentations-header" content="Talks and Presentations"></h1>
+				</div>
 				<div class="projects-div">
 					<!-- PyConSG 2019 -->
 					<div class="project fade-in fade-up">
@@ -296,9 +331,16 @@
 				
 			</div>
 			
-			<div class="content-block" id="projects"  style="padding-left:0;padding-right:0;">
-				<h1 class="content-header fade-in"> Projects</h1>
-				<p class="fade-in fade-up" style="padding: 0 30px; font-size:0.9em;"> I love working on projects as they give me a chance to apply the stuff that I've learnt. Here are some of my favourite from different stages of my learning journey: </p>
+			<div class="content-block" id="projects" style="padding-left:0;padding-right:0;">
+				<div class="content-header-placeholder-div">
+					<!-- div to occupy space of type component-->
+					<h1 class="content-header-placeholder">Projects</h1>
+				</div>
+				<div class="content-header-div fade-in">
+					<!-- to balance out the blinking cursor to have the text without the cursor centered-->
+					<h1 class="content-header" id="projects-header" content="Projects"></h1>
+				</div>
+				<p class="fade-in fade-up" style="padding: 0 30px;"> I love working on projects as they give me a chance to apply the stuff that I've learnt. Here are some of my favourite from different stages of my learning journey: </p>
 				<div class="projects-div">
 				
 					<!-- Cashit -->
@@ -380,7 +422,7 @@
 						</div>
 					</div>
 					
-					<!-- buildingblocs -->
+					<!-- BuildingBloCS -->
 					<div class="project fade-in fade-up">
 						<img data-src="resources/buildingblocs.png" src="resources/placeholder.png" draggable="false" class="projects-photo lazyload" alt="BuildingBloCS Logo"/>
 						<div class="project-description">
@@ -425,11 +467,18 @@
 			
 			</div>
 		
-			<div class="content-block">
-				<h1 class="content-header fade-in"> Awards</h1>
+			<div class="content-block" id="awards">
+				<div class="content-header-placeholder-div">
+					<!-- div to occupy space of type component-->
+					<h1 class="content-header-placeholder">Awards</h1>
+				</div>
+				<div class="content-header-div fade-in">
+					<!-- to balance out the blinking cursor to have the text without the cursor centered-->
+					<h1 class="content-header" id="awards-header" content="Awards"></h1>
+				</div>
 				<ul class="award-list">
 					<li class="fade-up fade-in">
-						<h4>Outstanding Achievement Award, Year 6<span class="award-organisation"> (Dunman High School)</span></h4>
+						<h4> Valedictorian, Outstanding Achievement Award, Year 6<span class="award-organisation"> (Dunman High School)</span></h4>
 						<p class="award-description"> Given annually to one Year 4 (Sec 4) and Year 6 (JC2) student who have made holistic achievements at their milestone years </p>	
 					</li>
 					<li class="fade-up fade-in">
@@ -464,8 +513,15 @@
 			
 			</div>
 			
-			<div class="content-block">
-				<h1 class="content-header fade-in"> Media</h1>		
+			<div class="content-block" id="media">
+				<div class="content-header-placeholder-div">
+					<!-- div to occupy space of type component-->
+					<h1 class="content-header-placeholder">Media</h1>
+				</div>
+				<div class="content-header-div fade-in">
+					<!-- to balance out the blinking cursor to have the text without the cursor centered-->
+					<h1 class="content-header" id="media-header" content="Media"></h1>
+				</div>
 				<div style="text-align:center;vertical-align:middle; position:relative;">
 					<div class="media-box fade-in fade-up">
 						<!-- used jpg and webp based on image size after jpg compression -->
@@ -486,8 +542,15 @@
 					</div>
 				</div>
 			</div>
-			<div class="content-block">
-				<h1 class="content-header fade-in"> Courses &amp; Certifications</h1>	
+			<div class="content-block" id="courses">
+				<div class="content-header-placeholder-div">
+					<!-- div to occupy space of type component-->
+					<h1 class="content-header-placeholder">Courses and Certifications</h1>
+				</div>
+				<div class="content-header-div fade-in">
+					<!-- to balance out the blinking cursor to have the text without the cursor centered-->
+					<h1 class="content-header" id="courses-header" content="Courses and Certifications"></h1>
+				</div>
 				<ul class="award-list">
 					<li class="fade-up fade-in">
 						<a href="https://www.coursera.org/account/accomplishments/specialization/certificate/NRZLRXPR36V7" target="_blank" class="course-link">Deep Learning Specialization</a><span class="award-organisation"> (DeepLearning.AI on Coursera)</span>

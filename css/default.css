@@ -179,6 +179,7 @@ body:active{
 .content-block{
 	padding:20px 3vw;
 	background-color:#111111;
+	position:relative;
 }
 
 .content-block:hover{
@@ -204,7 +205,32 @@ body:active{
 
 .content-header{
 	text-align:center;
-	padding:15px 5px;
+	/*used margins so the inner typed content header absolute div cannot occupy*/
+	position:relative;
+	display:inline-block;
+	text-align:center;
+}
+
+.content-header-div{
+	width:calc(100% - 6vw);
+	top:0;
+	left:0;
+	text-align:center;
+	/*match padding-top and sides for content block so the placeholder takes the same space*/
+	padding:20px 3vw;
+	position:absolute;
+}
+
+.content-header-placeholder{
+	text-align:center;
+	display:inline-block;
+}
+
+.content-header-placeholder-div{
+	visibility:hidden;
+	text-align:center;
+	/*match padding for .content-header-div*/
+	padding-bottom:20px;
 }
 
 .about-image{
@@ -298,7 +324,7 @@ body:active{
 }
 
 
-.skills-div{
+#programming-languages-chart{
 	margin: 5vh 10vw;
 	display:table;
 	position:relative;
@@ -352,7 +378,7 @@ p.expanding-bar-text{
 }
 
 .projects-div{
-	margin:5vw 10vw;
+	margin:3vw 10vw;
 	text-align:center;
 }
 
@@ -364,7 +390,6 @@ p.expanding-bar-text{
 	padding:0;
 	/*so project-description can use position:absolute*/
 	position:relative;
-	
 }
 
 .projects-photo{
@@ -450,7 +475,6 @@ p.expanding-bar-text{
 
 
 .award-description{
-	font-size:0.9em;
 	color:#CCCCCC;
 }
 
@@ -511,9 +535,8 @@ of a.media-link class*/
 	transform: translateY(-50%);
 	left:0;
 	width: 80vw;
-	height: 80vh;
+	height:90vh;
 	max-width: 60vh;
-	max-height:90vh;
 	background-color:#666666;
 	margin:0 auto;
 	z-index:1;
@@ -526,6 +549,7 @@ of a.media-link class*/
 .modal-box-projects p{
 	padding:0 5vw;
 	font-size:1em;
+	margin-bottom:0;
 }
 
 .modal-background{
@@ -635,8 +659,8 @@ of a.media-link class*/
 		display:inline-block;
 	}
 	
-	.skills-div{
-		margin:5vh 0vw;
+	#programming-languages-chart{
+		margin:3vh 0vw;
 	} 
 	
 	
@@ -770,12 +794,6 @@ of a.media-link class*/
 	.nav-bar-button{
 		width:32.4vw;
 	}
-	.content p{
-		font-size:0.9em;
-	}
-	.project-title{
-		font-size:0.9em;
-	}
 }
 
 
@@ -836,7 +854,7 @@ of a.media-link class*/
 		vertical-align:top;
 		margin-bottom: 0;
 		max-height:39vw;
-		overflow-y: auto;
+		overflow-y: scroll;
 	}
 	.modal-project-image{
 		display:inline-block;
