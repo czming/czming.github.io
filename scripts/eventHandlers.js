@@ -288,7 +288,7 @@ $wd.scroll(function(){
 	
 	//start fading in the whole element (it starts at 0.2*window height) then slide in
     //
-	if(!skillBarShown && currScroll + windowHeight >= $("#programming-languages-chart").position().top + 0.4 * windowHeight){
+	if(!skillBarShown && currScroll + windowHeight >= $("#programming-languages-chart").offset().top + 0.4 * windowHeight){
 		// reached the skills-div, unroll the graphs
 		//max years, everything else should be divided by this to get their length, bar length arrange in descending order of experience
 		var maxExperience = $(".expanding-bar:first-child").attr("value");
@@ -314,7 +314,6 @@ $wd.scroll(function(){
 	$contentHeader.each(function(){
 		if ($(this).attr("typed") != "true" && currScroll+windowHeight >= $(this).offset().top + 0.2 * windowHeight) {
 			$(this).attr("typed", "true");
-			console.log($(this).attr("id"));
 			contentHeaderTyped[$(this).attr("id")].start();
 		}
 	})
@@ -359,8 +358,3 @@ $wd.scroll(function(){
 	previousScroll=currScroll;
 	
 });
-
-
-
-
-	
