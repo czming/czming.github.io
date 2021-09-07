@@ -44,7 +44,7 @@ $(document).ready(function(){
 	documentHeight = $(document).height();
 
 	//typed library from Github by Matt Boldt at www.mattboldt.com under MIT License, attached at scripts/MIT-License.txt
-	var jsFiles = ["scripts/typed.min.js", "scripts/eventHandlers.js"];
+	var jsFiles = ["scripts/eventHandlers.js"];
 	//execute as they are called and inserted since DOM is already loaded
 	for (var i=0; i<jsFiles.length; i++){
 		var element = document.createElement("script");
