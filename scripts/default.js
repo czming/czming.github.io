@@ -22,17 +22,17 @@ $wd = $(window);
 
 /* for typewriter interface, without strings*/
 introHeaderTypedOptions = {
-	typeSpeed: 85,
+	typeSpeed: 50,
 	loop:false,
-	backSpeed: 80,
+	backSpeed: 45,
 	smartBackspace:true,
 	cursorChar: "__",
-	startDelay:400,
-	backDelay:800
+	startDelay:200,
+	backDelay:700
 };
 
 /*not sure why but strings only starts reading from second element for longer array(doesn't happen in about.js with only one array element*/
-introHeaderTypedOptions["strings"] = ["","Hi, I'm a builder.", "Hi, I'm a creator.", "Hi, I'm a developer.", "Hi, I'm Zhe Ming."];
+introHeaderTypedOptions["strings"] = ["","Hi, I'm a builder.", "Hi, I'm a creator.", "Hi, I'm a software engineer.", "Hi, I'm Ming."];
 	
 $(document).ready(function(){
 	//can activate these scripts that rely on the DOM first
